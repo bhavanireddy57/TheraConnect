@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 export const Connection = async () => {
-    const URL = process.env.MONGO_URl; // or MONGO_URL — whichever you use in .env
+    const URL = process.env.MONGO_URL; // or MONGO_URL — whichever you use in .env
 
     try {
         await mongoose.connect(URL); // ✅ no deprecated options
