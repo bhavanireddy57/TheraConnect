@@ -167,7 +167,7 @@ const CreateJournal = () => {
     if (coverPicture) formData.append('coverPicture', coverPicture);
 
     try {
-      const res = await fetch(`http://localhost:5001/${username}`, {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/${username}`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`

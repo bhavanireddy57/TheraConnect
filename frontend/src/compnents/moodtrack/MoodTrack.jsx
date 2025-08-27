@@ -489,7 +489,7 @@ const MoodTrack = () => {
   useEffect(() => {
     if (!username) return;
     axios
-      .get(`http://localhost:5001/api/moods/${username}`)
+      .get(`${process.env.REACT_APP_API_URL}/api/moods/${username}`)
       .then((res) => setMoodData(res.data || []))
       .catch((err) => console.error("Error fetching mood data:", err));
   }, [username]);
@@ -504,11 +504,11 @@ const MoodTrack = () => {
     setQuote(quotes[Math.floor(Math.random() * quotes.length)]);
 
     try {
-      await axios.post(`http://localhost:5001/api/moods/${username}`, {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/moods/${username}`, {
         date: selectedDate,
         mood,
       });
-      const res = await axios.get(`http://localhost:5001/api/moods/${username}`);
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/moods/${username}`);
       setMoodData(res.data || []);
       setIsModalOpen(false);
     } catch (err) {

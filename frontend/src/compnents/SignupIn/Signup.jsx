@@ -659,7 +659,7 @@ export default function Signup() {
       Object.keys(formData).forEach(key => formDataWithFile.append(key, formData[key]));
       if (profilePicture) formDataWithFile.append('profilePicture', profilePicture);
 
-      const response = await fetch('http://localhost:5001/signup', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/signup`, {
         method: 'POST',
         body: formDataWithFile
       });

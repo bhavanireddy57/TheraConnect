@@ -266,7 +266,7 @@ const ProfileUpdate = () => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5001/${username}/getuserdetails`, {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/${username}/getuserdetails`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         const { name, email, gender, age, bio, profilePicture } = response.data;
@@ -298,7 +298,7 @@ const ProfileUpdate = () => {
       if (profilePicture) formData.append('profilePicture', profilePicture);
 
       const response = await axios.patch(
-        `http://localhost:5001/${username}/update-user`,
+        `${process.env.REACT_APP_API_URL}/${username}/update-user`,
         formData,
         {
           headers: {

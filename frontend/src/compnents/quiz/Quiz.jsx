@@ -1230,7 +1230,7 @@ const Quiz = () => {
     setError("");
 
     try {
-      const response = await fetch('/api/quiz/analyze-quiz', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/quiz/analyze-quiz`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

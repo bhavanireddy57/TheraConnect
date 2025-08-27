@@ -169,7 +169,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5001/${username}/getuserdetails`, {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/${username}/getuserdetails`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUserDetails(response.data);
@@ -221,7 +221,7 @@ const Profile = () => {
                     <div className="relative">
                       <img
                         alt="Profile"
-                        src={userDetails.profilePicture ? `http://localhost:5001/${userDetails.profilePicture}` : defaultProfilePicture}
+                        src={userDetails.profilePicture ? `${process.env.REACT_APP_API_URL}/${userDetails.profilePicture}` : defaultProfilePicture}
                         className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-24 max-w-[180px]"
                       />
                     </div>

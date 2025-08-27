@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const API_BASE = "http://localhost:5001";
+const API_BASE = process.env.REACT_APP_API_URL;
 
 const AnonymousPost = () => {
   const [title, setTitle] = useState("");

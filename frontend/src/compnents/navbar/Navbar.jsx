@@ -28,7 +28,7 @@ const Navbar = () => {
 
   const confirmDelete = async () => {
     try {
-      await fetch(`http://localhost:8000/delete-user/${user}`, { method: "DELETE" });
+      await fetch(`${process.env.REACT_APP_API_URL}/delete-user/${user}`, { method: "DELETE" });
       handleLogout();
     } catch (error) {
       console.error("Error deleting user:", error);
