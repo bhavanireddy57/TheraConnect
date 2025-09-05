@@ -253,7 +253,7 @@ export default Therapist;*/
 
 
 import React, { useState, useEffect, useRef } from "react";
-import Loader from "react-js-loader";
+//import Loader from "react-js-loader";
 import Navbar from "../navbar/Navbar";
 
 const TypingAnimation = ({ color }) => (
