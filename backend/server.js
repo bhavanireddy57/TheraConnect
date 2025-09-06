@@ -405,7 +405,7 @@ const app = express();
 
 // ✅ CORS (adjust origin for your deployed frontend)
 app.use(cors({
-    origin: "https://theraconnect-frontend.onrender.com", // use actual frontend URL
+    origin: "https://vercel.com/bhavanis-projects-55d3a747/thera-connect/3wsMnvPTjKZNmFHDLEEWP3xrckS3", // use actual frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
