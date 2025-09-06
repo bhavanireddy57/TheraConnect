@@ -77,16 +77,17 @@ const ColorMatch = () => {
 
   const shuffleArray = (arr) => arr.sort(() => Math.random() - 0.5);
 
-  // Generate the first round on component mount
-  useEffect(() => {
-    generateNewRound();
-  }, []);
-
   const generateNewRound = () => {
     const newWord = getRandomColor();
     setColorWord(newWord);
     setButtonColors(shuffleArray([...colors]));
   };
+
+  // Generate the first round on component mount
+  useEffect(() => {
+    generateNewRound();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleClick = (color) => {
     if (color === colorWord) {
@@ -127,4 +128,3 @@ const ColorMatch = () => {
 };
 
 export default ColorMatch;
-

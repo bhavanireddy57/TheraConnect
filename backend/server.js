@@ -404,7 +404,12 @@ import Connection from './database/db.js';
 const app = express();
 
 // ✅ CORS (adjust origin for your deployed frontend)
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({
+    origin: "https://theraconnect-frontend.onrender.com", // use actual frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
+
 
 // ✅ JSON parsing (support base64 drawings, large payloads)
 app.use(express.json({ limit: "15mb" }));
